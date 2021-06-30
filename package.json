@@ -2,6 +2,9 @@
   "name": "jsmaraphonpro",
   "version": "1.0.0",
   "description": "RPG Game",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "build:dev": "env NODE_ENV=development webpack",
     "build": "env NODE_ENV=production webpack",
