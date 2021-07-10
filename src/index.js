@@ -11,8 +11,8 @@ let buttonDownPressed = false;
 let buttonRightPressed = false;
 let buttonUpPressed = false;
 let buttonLeftPressed = false;
-let pX = canvas.width / 2 - 24;
-let pY = canvas.height / 2 - 24;
+let pX = canvas.width / 2 - spriteW / 2;
+let pY = canvas.height / 2 - spriteW / 2;
 let spriteImage = 0;
 
 function keyDownHandler(e) {
@@ -55,19 +55,19 @@ img.addEventListener('load', () => {
   setInterval(() => {
     if (buttonDownPressed) {
       pY += 10;
-      if (pY > canvas.height - 48) {
-        pY = canvas.height - 48;
+      if (pY > canvas.height - spriteH) {
+        pY = canvas.height - spriteH;
       }
       cycle = (cycle + 1) % shots;
-      spriteImage = 0;
+      spriteImage = 0 * spriteH;
     }
     if (buttonRightPressed) {
       pX += 10;
-      if (pX > canvas.width - 48) {
-        pX = canvas.width - 48;
+      if (pX > canvas.width - spriteW) {
+        pX = canvas.width - spriteW;
       }
       cycle = (cycle + 1) % shots;
-      spriteImage = 96;
+      spriteImage = 2 * spriteH;
     }
     if (buttonLeftPressed) {
       pX -= 10;
@@ -75,7 +75,7 @@ img.addEventListener('load', () => {
         pX = 0;
       }
       cycle = (cycle + 1) % shots;
-      spriteImage = 48;
+      spriteImage = 1 * spriteH;
     }
     if (buttonUpPressed) {
       pY -= 10;
@@ -83,7 +83,7 @@ img.addEventListener('load', () => {
         pY = 0;
       }
       cycle = (cycle + 1) % shots;
-      spriteImage = 144;
+      spriteImage = 3 * spriteH;
     }
 
     ctx.clearRect(0, 0, 600, 600);
@@ -95,8 +95,8 @@ img.addEventListener('load', () => {
       spriteH,
       pX,
       pY,
-      48,
-      48
+      spriteW,
+      spriteH
     );
   }, 120);
 });
