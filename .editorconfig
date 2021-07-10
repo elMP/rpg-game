@@ -1,0 +1,5 @@
+root = true
+
+[*.js]
+quote_type = single
+trailingComma = all
