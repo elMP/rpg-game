@@ -1,6 +1,11 @@
 import './index.scss';
+import ClientGame from './client/ClientGame';
+
+window.addEventListener('load', () => {
+  ClientGame.init({ tagId: 'game' });
+});
 //import SenseiWalk from './assets/Female-4-Walk.png';
-import terrainAtlas from './assets/terrain.png';
+/*import terrainAtlas from './assets/terrain.png';
 import worldCfg from './configs/world.json';
 import sprites from './configs/sprites';
 
@@ -17,12 +22,21 @@ terrain.addEventListener('load', () => {
   map.forEach((cfgRow, y) => {
     cfgRow.forEach((cfgCell, x) => {
       const [sX, sY, sW, sH] = sprites.terrain[cfgCell[0]].frames[0];
-      ctx.drawImage(terrain, sX, sY, sW, sH, x * spriteW, y * spriteH, spriteW, spriteH);
+      ctx.drawImage(
+        terrain,
+        sX,
+        sY,
+        sW,
+        sH,
+        x * spriteW,
+        y * spriteH,
+        spriteW,
+        spriteH
+      );
       //console.log(cfgCell[0]);
     });
   });
-});
-
+});*/
 /*const shots = 3;
 let cycle = 0;
 let buttonDownPressed = false;
