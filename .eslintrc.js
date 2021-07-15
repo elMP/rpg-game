@@ -9,6 +9,10 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    "comma-dangle": 1
+    "comma-dangle": 1,
+    "no-unused-vars": "warn",
+    "object-curly-newline": "warn",
+    "no-restricted-syntax": "warn",
+    "guard-for-in": "warn",
   },
 };
