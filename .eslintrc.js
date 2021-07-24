@@ -14,5 +14,10 @@ module.exports = {
     "object-curly-newline": "warn",
     "no-restricted-syntax": "warn",
     "guard-for-in": "warn",
+    "operator-linebreak": "warn",
+    "no-unused-expressions": "warn",
+    "no-plusplus": "warn",
+    "camelcase": "warn",
+    "import/prefer-default-export": "warn",
   },
 };
