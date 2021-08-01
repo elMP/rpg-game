@@ -24,5 +24,7 @@ module.exports = {
     "implicit-arrow-linebreak": "warn",
     "no-return-assign": "warn",
     "function-paren-newline": "warn",
+    "prefer-object-spread": "warn",
+    "new-cap": "warn",
   },
 };
