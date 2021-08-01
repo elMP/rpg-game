@@ -19,5 +19,10 @@ module.exports = {
     "no-plusplus": "warn",
     "camelcase": "warn",
     "import/prefer-default-export": "warn",
+    "no-param-reassign": "warn",
+    "no-bitwise": "warn",
+    "implicit-arrow-linebreak": "warn",
+    "no-return-assign": "warn",
+    "function-paren-newline": "warn",
   },
 };
