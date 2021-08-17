@@ -8,6 +8,7 @@ const chatWrap = document.querySelector('.chat-wrap');
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const message = document.querySelector('.message');
+const online = document.querySelector('.online');
 
 startGame.addEventListener('click', () => {
   const socket = io('https://jspromarathonchat.herokuapp.com/');
@@ -24,17 +25,31 @@ startGame.addEventListener('click', () => {
 
   socket.on('chat connection', (data) => {
     console.log(data);
-    message.insertAdjacentHTML('beforeend', `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`);
+    message.insertAdjacentHTML(
+      'beforeend',
+      `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`
+    );
   });
 
   socket.on('chat disconnect', (data) => {
     console.log(data);
-    message.insertAdjacentHTML('beforeend', `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`);
+    message.insertAdjacentHTML(
+      'beforeend',
+      `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`
+    );
   });
 
   socket.on('chat message', (data) => {
     console.log(data);
-    message.insertAdjacentHTML('beforeend', `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`);
+    message.insertAdjacentHTML(
+      'beforeend',
+      `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`
+    );
+  });
+
+  socket.on('chat online', (data) => {
+    console.log(data);
+    online.innerHTML = `Online: ${data.online}`;
   });
 
   form.addEventListener('submit', (e) => {
@@ -48,5 +63,3 @@ startGame.addEventListener('click', () => {
     }
   });
 });
-
-
