@@ -27,7 +27,7 @@ startGame.addEventListener('click', () => {
     console.log(data);
     message.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`
+      `<p style='font-style:italic;'><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`
     );
   });
 
@@ -35,20 +35,25 @@ startGame.addEventListener('click', () => {
     console.log(data);
     message.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`
+      `<p style='font-style:italic;'><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`
     );
   });
 
   socket.on('chat message', (data) => {
     console.log(data);
+    let msgColor;
+    if (data.id === socket.id)
+      msgColor = 'green';
+    else
+      msgColor = 'black';
     message.insertAdjacentHTML(
       'beforeend',
-      `<p><strong>${getTime(data.time)}</strong> - ${data.msg}</p>`
+      `<p style='color:${msgColor};'><strong>${getTime(data.time)}</strong> ${data.name} - ${data.msg}</p>`
     );
   });
 
   socket.on('chat online', (data) => {
-    console.log(data);
+    console.log(data, socket.id);
     online.innerHTML = `Online: ${data.online}`;
   });
 
